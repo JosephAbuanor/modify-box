@@ -1,20 +1,24 @@
-
-function background(){
-  bg = document.getElementById('background').value
-  document.getElementById("modify").style.background = bg;
-}
-
-function width(){
-  width = document.getElementById('width').value
-  document.getElementById("modify").style.width = width;
-}
-
-function height(){
-  height = document.getElementById('height').value
-  document.getElementById("modify").style.height = height;
+array = document.getElementsByName('cssProperty');
+for (let i = 0; i < array.length; i++)
+{
+  console.log(array[i]);
+  array[i].addEventListener('change', property);
 }
 
 
-document.getElementById('background').addEventListener('change',background);
-document.getElementById('width').addEventListener('change',width);
-document.getElementById('height').addEventListener('change',height);
+function property(){
+  value = this.value
+  id = this.id
+
+  newlol = document.getElementById("modify").style
+
+  if (id == "background"){newlol.background = value}
+  else if(id == "width"){newlol.width = value}
+  else if(id == "height"){newlol.height = value}
+
+
+
+
+
+
+}
